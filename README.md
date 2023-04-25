@@ -15,3 +15,5 @@ Use the API client to fetch the Google Business Reviews for your account. You ca
 
 Analyze the sentiment and respond to reviews:
 Loop through the reviews, use TextBlob to analyze the sentiment of the review content, and decide on an appropriate reply based on the number of stars and the sentiment. Use the accounts.locations.reviews.reply method to reply to the reviews.
+
+[Further Reading](https://www.digitalocean.com/community/tutorials/how-to-perform-sentiment-analysis-in-python-3-using-the-natural-language-toolkit-nltk)
