@@ -8,10 +8,3 @@ credentials = service_account.Credentials.from_service_account_file(
 
 client = googleapiclient.discovery.build(serviceName='mybusiness', version='v4', credentials=credentials)
 # print(client)
-
-'''
-TODO:
-https://console.cloud.google.com/apis/api/mybusinessbusinessinformation.googleapis.com/metrics?project=fiery-caldron-388120&supportedpurview=project
-serviceName: mybusinessbusinessinformation.googleapis.com 
-version: v4
-'''

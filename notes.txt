@@ -1,0 +1,8 @@
+https://developers.google.com/my-business/content/review-data#list_all_reviews
+
+TODO:
+https://console.cloud.google.com/apis/api/mybusinessbusinessinformation.googleapis.com/metrics?project=fiery-caldron-388120&supportedpurview=project
+serviceName: mybusinessbusinessinformation.googleapis.com
+version: v4
+
+https://developers.google.com/my-business/reference/rest/v4/accounts.locations.reviews/list
