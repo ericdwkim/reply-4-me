@@ -2,7 +2,7 @@
 
 This is the privacy policy for  **reply4me** automation bot to respond to Google Business Reviews.
 
-<img src="/Users/ekim/workspace/personal/reply-4-me/static_images/logo.jpg" width="1000" height="500">
+<img src="https://koreana.restaurant/wp-content/uploads/2023/01/Logo-Korean-Resturent.png" width="1000" height="500">
 
 We respect your privacy and are committed to protecting your personal information. This privacy policy explains how we collect, use, and safeguard any data collected by our Google review response automation bot.
 
