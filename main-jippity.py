@@ -12,21 +12,27 @@ else:
     flow = InstalledAppFlow.from_client_secrets_file("client_secret.json", scopes=["https://www.googleapis.com/auth/business.manage"])
     creds = flow.run_local_server(port=0)
 
-api_client = build("mybusinessbusinessinformation", "v1", credentials=creds, static_discovery=False)
+api_service = build("mybusinessbusinessinformation", "v1", credentials=creds, static_discovery=False)
 
-# Replace with your Google My Business account and location IDs
-account_id = "your-account-id"
-location_id = "your-location-id"
+# Fetch account_id, location_id from API
+
+accounts = api_service.accounts().list().execute()
+account_id = accounts['accounts'][0]['name']
+print(f'account id: {account_id}')
+locations = api_service.accounts().locations().list(parent=account_id).execute()
+location_id = locations['locations'][0]['name']
+print(f'location id: {location_id}')
+
 
 # Fetch the reviews
-reviews = api_client.accounts().locations().reviews().list(parent=f"accounts/{account_id}/locations/{location_id}").execute()
+reviews = api_service.accounts().locations().reviews().list(parent=f"accounts/{account_id}/locations/{location_id}").execute()
 
 # Analyze sentiment and respond to reviews
 for review in reviews["reviews"]:
     user_name = review["reviewer"]["displayName"]
     num_of_stars_user_gave = review["starRating"]
     review_text = review["comment"]
-    
+
     # Analyze sentiment using TextBlob
     sentiment = TextBlob(review_text).sentiment.polarity
     response = ""
@@ -41,5 +47,5 @@ for review in reviews["reviews"]:
     reply_body = {
         "comment": response
     }
-    api_client.accounts().locations().reviews().reply(parent=f"accounts/{account_id}/locations/{location_id}/reviews/{review['reviewId']}", body=reply_body).execute()
+    api_service.accounts().locations().reviews().reply(parent=f"accounts/{account_id}/locations/{location_id}/reviews/{review['reviewId']}", body=reply_body).execute()
 

@@ -12,3 +12,4 @@ print(client)
 
 
 # discoveryServiceUrl="https://{api}/$discovery/rest?version={apiVersion}"
+
