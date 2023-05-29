@@ -12,7 +12,7 @@ else:
     flow = InstalledAppFlow.from_client_secrets_file("client_secret.json", scopes=["https://www.googleapis.com/auth/business.manage"])
     creds = flow.run_local_server(port=0)
 
-api_client = build("mybusiness", "v4", credentials=creds)
+api_client = build("mybusinessbusinessinformation", "v1", credentials=creds, static_discovery=False)
 
 # Replace with your Google My Business account and location IDs
 account_id = "your-account-id"
